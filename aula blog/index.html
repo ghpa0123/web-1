@@ -1,0 +1,18 @@
+// js/script.js
+
+async function carregarPagina(pagina){
+
+    try{
+
+        const resposta = await fetch(pagina);
+
+        if(!resposta.ok){
+            throw new Error("Página não encontrada");
+        }
+
+        const html = await resposta.text();
+
+        document.getElemrntById("conteudo").innerHTML = html;
+
+
+        
